@@ -224,6 +224,15 @@ public class TriangleTest {
         assertEquals(expResult, result, 0.0);
     }
 
+
+    @Test
+    public void checkAreaD() {
+        System.out.println("Checking Area D");
+        Triangle instance1 = new Triangle("10", "4", "8");
+        double expResult = Math.sqrt(11*3*7);
+        double result = instance1.Area();
+        assertEquals(expResult, result, 0.0);
+    }
     @Test
     public void checkAreaInvalid() {
         System.out.println("Checking Area A");
