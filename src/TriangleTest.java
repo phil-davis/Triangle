@@ -196,4 +196,40 @@ public class TriangleTest {
         String result = instance1.determineTriangleType();
         assertEquals(expResult, result);
     }
+
+    @Test
+    public void checkAreaA() {
+        System.out.println("Checking Area A");
+        Triangle instance1 = new Triangle("5", "4", "3");
+        double expResult = 6.0;
+        double result = instance1.Area();
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void checkAreaB() {
+        System.out.println("Checking Area B");
+        Triangle instance1 = new Triangle("7", "4", "3");
+        double expResult = 0.0;
+        double result = instance1.Area();
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void checkAreaC() {
+        System.out.println("Checking Area C");
+        Triangle instance1 = new Triangle("0", "4", "4");
+        double expResult = 0.0;
+        double result = instance1.Area();
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void checkAreaInvalid() {
+        System.out.println("Checking Area A");
+        Triangle instance1 = new Triangle("8", "4", "3");
+        double expResult = -1.0;
+        double result = instance1.Area();
+        assertEquals(expResult, result, 0.0);
+    }
 }

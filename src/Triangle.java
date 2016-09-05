@@ -114,5 +114,61 @@ public class Triangle {
         return type;        
     }
 
-     
+    public Double Area() {
+
+    	int s1 = -1, s2=-1, s3 = -1, temp=-1;
+        boolean err = false;
+        try {
+            s1 = Integer.parseInt(side1);
+        } catch (NumberFormatException e) {
+           err = true;
+        }
+        try {
+            s2 = Integer.parseInt(side2);
+        } catch (NumberFormatException e) {
+           err = true;
+        }
+        try {
+            s3 = Integer.parseInt(side3);
+        } catch (NumberFormatException e) {
+           err = true;
+        }
+        
+        // Check that nothing is negative
+        if (s1 < 0 || s2 < 0 || s3 < 0) {
+               err = true;
+        }
+        
+        if (s1 > s3) {
+        	temp = s3;
+        	s3 = s1;
+        	s1 = temp;
+        }
+        
+        if (s2 > s3) {
+        	temp = s3;
+        	s3 = s2;
+        	s2 = temp;
+        }
+        
+        if (s1 > s2) {
+        	temp = s2;
+        	s2 = s1;
+        	s1 = temp;
+        }
+        
+        // Check for side length
+        if ((s1 + s2 < s3)) {
+               err = true;
+        }
+        
+        double result = -1.0;
+        
+        if (!err) {
+        	int p = s1 + s2 + s3;
+        	result = (Math.sqrt(p*(p-(2*s1))*(p-(2*s2))*(p-(2*s3)))/4);
+        }
+        
+        return result;
+    }
 }
